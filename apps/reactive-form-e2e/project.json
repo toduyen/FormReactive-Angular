@@ -1,0 +1,28 @@
+{
+  "root": "apps/reactive-form-e2e",
+  "sourceRoot": "apps/reactive-form-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/reactive-form-e2e/cypress.json",
+        "devServerTarget": "reactive-form:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "reactive-form:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/reactive-form-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["reactive-form"]
+}
